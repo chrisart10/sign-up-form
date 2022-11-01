@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-section">
+            <h1>The Odin Project  Antivirus</h1>
+            <!-- <img src="./images/building.jpg" alt="Gamboa Forest"> -->
+            <footer>
+                <p>Photo by <a href="https://www.deviantart.com/chrisart10">chrisart10</a></p>
+            </footer>
+        </div>
+        <div class="form-section">
+            <p>This is not a real online service! You know you need something like this in your life to help your
+                realize your
+                deepest dreams.
+                <br>
+                Sign up <i>now</i> to get started.
+            </p>
+            <p>You <i>know</i> you want to.</p>
+            <form>
+                <fieldset>
+                    <legend>Let's do this!</legend>
+                    <ul>
+                        <div>
+                            <li>
+                                <label for="firstName">FIRST NAME:*</label>
+                                <input type="text" name="firstName" id="firstName" maxlength="32" required>
+                            </li>
+                            <li>
+                                <label for="lastName">LAST NAME:*</label>
+                                <input type="text" name="lastName" id="lastName" maxlength="32" required>
+                            </li>
+                        </div>
+                        <div>
+                            <li>
+                                <label for="email">EMAIL:*</label>
+                                <input type="email" name="email" id="email"
+                                    pattern="\w{1,64}(.\w{1,64})?@\w{1,32}.[a-z]{1,3}(.[a-z]{1,3})?" required>
+                            </li>
+                            <li>
+                                <label for="phoneNumber">PHONE NUMBER</label>
+                                <input type="tel" name="phoneNumner" id="phoneNumber">
+                            </li>
+                        </div>
+                        <div>
+                            <li>
+                                <label for="password">PASSWORD:*</label>
+                                <input type="password" name="password" id="password" required title="Password and Confirm Password must be equal.">
+                            </li>
+                            <li>
+                                <label for="passwordConfirmation">CONFIRM PASSWORD:*</label>
+                                <input type="password" name="passwordConfirmation" id="passwordConfirmation" required title="Password and Confirm Password must be equal.">
+                            </li>
+                        </div>
+                    </ul>
+                </fieldset>
+                <button type="submit">Create Account</button>
+                <p class="login-section">Already have an account? <a href="#">Log in</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const password = document.querySelector('#password')
+        const passwordConfirmation = document.querySelector('#passwordConfirmation')
+        window.addEventListener('keyup', event => {
+            if ((password.value === passwordConfirmation.value) && (password.value !== '' && passwordConfirmation !== '')){
+                password.style = 'border: 2px solid lawngreen;'
+                passwordConfirmation.style = 'border: 2px solid lawngreen;'
+                console.log('valid')
+            } else if(password.value !== passwordConfirmation.value){
+                password.style = 'border: 2px solid red;'
+                passwordConfirmation.style = 'border: 2px solid red;'
+                console.log('invalid')
+            }
+        })
+    </script>
+</body>
+
+</html>
